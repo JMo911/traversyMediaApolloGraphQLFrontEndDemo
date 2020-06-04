@@ -32,3 +32,15 @@
 }
 
 [GitHub Repo](https://github.com/bradtraversy/spacex_launch_stats)
+
+
+
+proxy:
+{
+
+    "context": ["/launches", "/launch/:flight_number"],
+    "target": "http://localhost:5000",
+    "changeOrigin": false,
+    "logLevel": "debug"
+
+}
