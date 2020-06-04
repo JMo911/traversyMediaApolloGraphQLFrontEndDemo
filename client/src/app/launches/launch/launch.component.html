@@ -1,1 +1,28 @@
-<p>launch works!</p>
+<div class="container" *ngIf="launch; let launch">
+  <h1 class="display-4 my-3"><span class="text-dark">Mission: </span>{{launch.mission_name}}</h1>
+  <h4 class="mb-3">Launch Details</h4>
+  <ul class="list-group">
+    <li class="list-group-item">
+      Flight Number: {{launch.flight_number}}
+    </li>
+    <li class="list-group-item">
+      Launch Year: {{launch.launch_year}}
+    </li>
+    <li class="list-group-item">
+      Launch Successful: <span [ngClass]="{'text-success': launch.launch_success, 'text-danger': !launch.launch_success}">{{launch.launch_success ? "Yes": "No"}}</span>
+    </li>
+  </ul>
+  <h4 class="my-3">Rocket Details</h4>
+  <ul class="list-group">
+    <li class="list-group-item">
+      Rocket ID: {{launch.rocket.rocket_id}}
+    </li>
+    <li class="list-group-item">
+      Rocket Name: {{launch.rocket.rocket_name}}
+    </li>
+    <li class="list-group-item">
+      Rocket Type: {{launch.rocket.rocket_type}}
+    </li>
+  </ul>
+  <button [routerLink]="['/launches']" class="btn btn-secondary my-3">Back</button>
+</div>

@@ -15,7 +15,7 @@ export class LaunchComponent implements OnInit {
   flightNumber: number;
 
   constructor(private apollo: Apollo, route: ActivatedRoute) {
-    this.flightNumber = route.snapshot.params.flight_number;
+    this.flightNumber = +route.snapshot.params.flight_number;
   }
 
   ngOnInit(): void {
