@@ -23,6 +23,7 @@ export class LaunchesComponent implements OnInit {
             flight_number,
             mission_name,
             launch_year,
+            launch_date_local
           }
         }
         `,
