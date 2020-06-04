@@ -4,13 +4,15 @@
 <div *ngIf="error">
   Error :(
 </div>
+<h1 class="display-4 my-3" *ngIf="!loading">Launches</h1>
+<app-mission-key *ngIf="!loading"></app-mission-key>
 <div *ngIf="launches">
   <div *ngFor="let launch of launches">
     <div class="card card-body mb-3">
       <div class="row">
         <div class="col-md-9">
-          <h4>Mission: {{launch.mission_name}}</h4>
-          <p>Date: {{launch.launch_date_local}}</p>
+          <h4>Mission: <span [ngClass]="{'text-success': launch.launch_success, 'text-danger': !launch.launch_success}">{{launch.mission_name}}</span></h4>
+          <p>Date: {{formatTime(launch.launch_date_local)}}</p>
         </div>
         <div class="col-md-3">
           <button class="btn btn-secondary">Launch Details</button>

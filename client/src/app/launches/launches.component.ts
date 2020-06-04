@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Apollo} from 'apollo-angular';
 import gql from 'graphql-tag';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-launches',
@@ -23,17 +24,21 @@ export class LaunchesComponent implements OnInit {
             flight_number,
             mission_name,
             launch_year,
-            launch_date_local
+            launch_date_local,
+            launch_success
           }
         }
         `,
       })
       .valueChanges.subscribe(result => {
         this.launches = result.data && result.data['launches'];
-        console.log(result.data);
         this.loading = result.loading;
         this.error = result['error'];
       });
+  }
+
+  formatTime(timestamp: string) {
+    return moment(timestamp).format('YYYY-MM-DD HH:mm');
   }
 
 }
