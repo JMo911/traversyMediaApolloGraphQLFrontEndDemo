@@ -33,7 +33,7 @@ import { LaunchComponent } from './launches/launch/launch.component';
       return {
         cache: new InMemoryCache(),
         link: httpLink.create({
-          uri: 'http://localhost:5000/graphql'
+          uri: '/graphql'
         })
       };
     },

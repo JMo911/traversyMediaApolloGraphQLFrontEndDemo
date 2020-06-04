@@ -44,3 +44,6 @@ proxy:
     "logLevel": "debug"
 
 }
+
+
+left off on this video.. trying to get proxy to work: https://www.youtube.com/watch?v=ok6bu-3XRA8
